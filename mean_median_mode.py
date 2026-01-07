@@ -55,10 +55,10 @@ def print_statistics(mean_value, median_value, mode_value, elements): #mean_valu
     print(f"Mode: {mode_value}")
 
 #Main function to take input and call other functions
-def main():                                                           #main function to execute the program
-    number_of_elements = int(input("Enter the number of elements: ")) #take input for number of elements from the user
-    elements = input("Enter the elements separated by space: ").split() #take input for elements from the user and split them into a list
-    elements = list(map(int, elements))                                 #convert the elements from string to integer
+def main():                                                              #main function to execute the program
+    number_of_elements = int(input("Enter the number of elements: "))    #take input for number of elements from the user
+    elements = input("Enter the elements separated by space: ").split()  #take input for elements from the user and split them into a list
+    elements = list(map(int, elements))                                  #convert the elements from string to integer
 
      #call the functions to calculate mean, median, and mode
     mean_value = mean(elements, number_of_elements)                   #calling mean function to calculate mean and store the result in mean_value
