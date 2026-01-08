@@ -1,5 +1,6 @@
 # Kadane Algorithm to find the maximum sum of a contiguous subarray
 
+#Function to implement Kadane's Algorithm
 def kadane_algorithm(arr):
     max_current = arr[0]                                     # Initialize max_current to the first element
     max_global = arr[0]                                      # Initialize max_global to the first element
@@ -11,6 +12,7 @@ def kadane_algorithm(arr):
 
     return max_global                                         # Return the maximum sum of contiguous subarray
 
+#Main function to take input and call Kadane's algorithm
 def main():
     arr = input("Enter the array: ").split()             # Take input from the user and split it into an array
     arr = list(map(int, arr))                                 # Convert the elements from string to integer
@@ -18,5 +20,6 @@ def main():
     print(f"The maximum sum of a contiguous subarray is: {max_sum}") # Print the maximum sum
 
 
+# Check if the script is being run directly
 if __name__ == "__main__":
     main()                                                    # Call the main function to execute the program                                     
