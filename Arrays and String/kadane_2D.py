@@ -4,7 +4,7 @@ import sys                                                     # Import sys modu
 
 # Function to implement Kadane's Algorithm
 def kadane(matrix, l, b):
-    ans = -sys.maxsize                                      # Initialize ans to the smallest possible integer value
+    ans = -sys.maxsize - 1                                     # Initialize ans to the smallest possible integer value
     for i in range(b):
         temp =[]
         for j in range(l):
