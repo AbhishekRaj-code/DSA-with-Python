@@ -1,4 +1,4 @@
-# Program to find elements in an array that sum to a given target
+# Program to find 2 elements in an array that sum to a given target
 # O(n log n) time complexity due to sorting
 
 
@@ -21,11 +21,12 @@ def find_pairs_with_sum(arr, target_sum):
                 if temp[i] == arr[end]:                                                    # Find the index of the second element
                     l2 = i                                                                 # Store the index of the second element
             show_pairs([(arr[start], arr[end])], (l1, l2), temp, target_sum)               # Display the pair found along with their indices
-            break                                                                          # Exit the loop
+            return                                                                          # Exit the loop
         elif current_sum < target_sum:                                                     # If the current sum is less than the target sum, move the start pointer to the right
             start += 1                                                                     # Move the start pointer to the right
         else:                                                                              # If the current sum is greater than the target sum, move the end pointer to the left
             end -= 1                                                                       # Move the end pointer to the left
+    return -1                                                                             # Return -1 if no pair is found
 
 # Function to display the pairs found
 def show_pairs(pairs, location, arr, target): 
