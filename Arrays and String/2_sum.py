@@ -11,22 +11,23 @@ def find_pairs_with_sum(arr, target_sum):
 
     start = 0                                                                              # Initialize start pointer 
     end = len(arr) - 1                                                                     # Initialize end pointer
-
+    check = False
     while start < end:                                                                     # Loop until the two pointers meet or cross
         current_sum = arr[start] + arr[end]                                                # Calculate the sum of elements at the two pointers 
         if current_sum == target_sum:                                                      # If the sum matches the target sum then we found a pair
+            check = True                                                                   # Set check to True
             for i in range(len(temp)):                                                     # Loop through the original array to find the indices of the elements
                 if temp[i] == arr[start]:                                                  # Find the indices of the elements
                     l1 = i                                                                 # Store the index of the first element
                 if temp[i] == arr[end]:                                                    # Find the index of the second element
                     l2 = i                                                                 # Store the index of the second element
             show_pairs([(arr[start], arr[end])], (l1, l2), temp, target_sum)               # Display the pair found along with their indices
-            return                                                                          # Exit the loop
+            break                                                                         # Exit the loop
         elif current_sum < target_sum:                                                     # If the current sum is less than the target sum, move the start pointer to the right
             start += 1                                                                     # Move the start pointer to the right
         else:                                                                              # If the current sum is greater than the target sum, move the end pointer to the left
             end -= 1                                                                       # Move the end pointer to the left
-    return -1                                                                             # Return -1 if no pair is found
+    if not check: show_pairs([], (), temp, target_sum)                                        # Display no pair found
 
 # Function to display the pairs found
 def show_pairs(pairs, location, arr, target): 

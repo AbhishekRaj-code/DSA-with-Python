@@ -13,11 +13,12 @@ def find_triplets_with_sum(arr, target_sum):
 
         start = k + 1                                                                      # Initialize start pointer
         end = len(arr) - 1                                                                 # Initialize end pointer
-
+        check = False                                                                    # Flag to check if triplet is found
         while start < end:                                                                 # Loop until the two pointers meet or cross
             current_sum = arr[start] + arr[end]                                            # Calculate the sum of elements at the two pointers
 
             if current_sum == temp_target:                                                 # If the sum matches the target sum then we found a triplet
+                check = True                                                                # Set check to True
                 l1, l2, l3 = 0, 0, 0
                 for i in range(len(temp)):                                                 # Loop through the original array to find the indices of the elements
                     if temp[i] == arr[k] and l1 == 0:                                      # Find the index of the first element
@@ -27,12 +28,12 @@ def find_triplets_with_sum(arr, target_sum):
                     elif temp[i] == arr[end] and l3 == 0:                                 # Find the index of the third element
                         l3 = i                                                             # Store the index of the third element
                 show_triplets([(arr[k], arr[start], arr[end])], (l1, l2, l3), temp, target_sum) # Display the triplet found along with their indices
-                return                                                                       # Exit after finding the first triplet
+                break                                                                       # Exit after finding the first triplet
             elif current_sum < temp_target:                                                # If the current sum is less than the target sum, move the start pointer to the right
                 start += 1                                                                  # Move the start pointer to the right
             else:                                                                          # If the current sum is greater than the target sum, move the end pointer to the left
                 end -= 1                                                                    # Move the end pointer to the left
-    return -1
+    if not check: show_triplets([], (), temp, target_sum)                                       # Display no triplet found
 
 # Function to display the triplets found
 def show_triplets(triplets, location, arr, target):
