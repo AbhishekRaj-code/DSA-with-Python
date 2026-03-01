@@ -16,8 +16,9 @@ class LinkedList:                                                          # Lin
         while temp != None:                                                # Traverse until the end of the linked list
             print(temp.val, end=" -> ")                                    # Print the value of the current node
             temp = temp.next                                               # Move to the next node
-    
-    def instionAtTail(self, value):                                        # Method to insert a new node at the tail of the linked list
+        print()                                                            # Print to indicate the end of the linked list
+
+    def insertionAtTail(self, value):                                        # Method to insert a new node at the tail of the linked list
         if self.head == None:                                              # Checking if the linked list is empty to insert the first node
             self.head = node(value)                                        # If empty, create a new node and set it as the head
             return                                                         # Return after inserting the first node
@@ -28,10 +29,9 @@ class LinkedList:                                                          # Lin
         temp.next = node(value)                                           # Create a new node and link it as the next of the last node
 
 LinkedList = LinkedList()                                                # Create an instance of the LinkedList class
-LinkedList.instionAtTail(1)                                              # Insert elements at the tail of the linked list
-LinkedList.instionAtTail(2)                                              # Insert elements at the tail of the linked list
-LinkedList.instionAtTail(3)                                              # Insert elements at the tail of the linked list
-LinkedList.instionAtTail(4)                                              # Insert elements at the tail of the linked list
-LinkedList.instionAtTail(5)                                              # Insert elements at the tail of the linked list
-
+LinkedList.insertionAtTail(1)                                              # Insert elements at the tail of the linked list
+LinkedList.insertionAtTail(2)                                              # Insert elements at the tail of the linked list
+LinkedList.insertionAtTail(3)                                              # Insert elements at the tail of the linked list
+LinkedList.insertionAtTail(4)                                              # Insert elements at the tail of the linked list
+LinkedList.insertionAtTail(5)                                              # Insert elements at the tail of the linked list
 LinkedList.printLinkedList()                                              # Print the linked list

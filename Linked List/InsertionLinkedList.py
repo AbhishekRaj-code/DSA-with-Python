@@ -17,6 +17,7 @@ class LinkedList:                                                          # Lin
         while temp != None:                                                # Traverse until the end of the linked list
             print(temp.val, end=" -> ")                                    # Print the value of the current node
             temp = temp.next                                               # Move to the next node
+        print()                                                            # Print to indicate the end of the linked list
     
     def insertionAtTail(self, value):                                        # Method to insert a new node at the tail of the linked list
         if self.head == None:                                              # Checking if the linked list is empty to insert the first node
